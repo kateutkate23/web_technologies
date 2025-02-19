@@ -1,0 +1,21 @@
+.section__video {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.documentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

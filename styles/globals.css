@@ -1,0 +1,19 @@
+.container {
+    max-width: calc(1240px + 20px * 2);
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section__text p {
+    margin-bottom: 12px;
+}
+
+th,
+td {
+    border: 1px solid black;
+}

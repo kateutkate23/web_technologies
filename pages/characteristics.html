@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица характеристик</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__inner container">
+            <div class="header__logo-title">
+                <img class="header__logo" src="../images/header_hat.jpg" alt="Шапка сайта">
+                <h1 class="header__title">Таблица характеристик языка Python</h1>
+            </div>
+            <div class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="../index.html"><cite>Главная</cite></a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="../pages/characteristics.html"><cite>Таблица
+                                характеристик</cite></a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="../pages/sources.html"><cite>Источники</cite></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="main">
+        <div class="section container">
+            <div class="section__body">
+                <h2 class="section__title">Язык Python в таблицах</h2>
+                <picture class="picture">
+                    <img src="../images/python_opportunities.png" alt="Python careers">
+                </picture>
+                <div class="columns">
+                    <div class="column">
+                        <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; text-align: center;">
+                            <caption>Характеристики языка Python</caption>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Категория</th>
+                                    <th colspan="2">Описание</th>
+                                </tr>
+                                <tr>
+                                    <th>Характеристика</th>
+                                    <th>Значение</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">Типизация</td>
+                                    <td>Динамическая</td>
+                                    <td>Тип переменной определяется во время исполнения</td>
+                                </tr>
+                                <tr>
+                                    <td>Строгая</td>
+                                    <td>Нельзя выполнять операции с несовместимыми типами</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Парадигма</td>
+                                    <td>Процедурная</td>
+                                    <td>Возможность писать код без классов</td>
+                                </tr>
+                                <tr>
+                                    <td>Объектно-ориентированная</td>
+                                    <td>Все в Python является объектом</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">Источник: официальная документация Python</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="column">
+                        <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; text-align: center;">
+                            <caption>Применение Python</caption>
+                            <thead>
+                                <tr>
+                                    <th>Область</th>
+                                    <th>Описание</th>
+                                    <th>Популярность (1-5)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Веб-разработка</td>
+                                    <td>Django, Flask</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>Машинное обучение</td>
+                                    <td>TensorFlow, PyTorch</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>Анализ данных</td>
+                                    <td>Pandas, NumPy</td>
+                                    <td>5</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">Источник: исследование 2025</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section container">
+            <div class="section__body">
+                <h2 class="section__title">Асинхронное программирование в Python</h2>
+                <p>Асинхронное программирование позволяет выполнять несколько задач одновременно, не блокируя основной
+                    поток выполнения программы. Это особенно полезно для операций ввода-вывода, таких как сетевые
+                    запросы или чтение/запись файлов, где время ожидания может быть значительным. В Python асинхронное
+                    программирование становится все более популярным благодаря библиотеке <code>asyncio</code>. Асинхронное
+                    программирование позволяет улучшить производительность и отзывчивость приложений, особенно в
+                    сценариях с большим количеством операций ввода-вывода. Это достигается за счет того, что программа
+                    не простаивает в ожидании завершения одной задачи, а продолжает выполнять другие задачи.</p>
+                <p>Пример асинхронной программы с использованием <code>asyncio</code>:</p>
+                <pre><code>
+import asyncio
+
+async def fetch_data():
+    print("Start fetching data...")
+    await asyncio.sleep(2)  # Имитация долгой операции
+    print("Data fetched!")
+
+async def main():
+    await asyncio.gather(fetch_data(), fetch_data(), fetch_data())
+
+# Запуск программы
+asyncio.run(main())
+                </code></pre>
+                <p>В этом примере функция <code>fetch_data</code> является корутиной, которая приостановится на 2
+                    секунды, имитируя задержку при получении данных. Функции <code>await</code> и
+                    <code>asyncio.gather()</code> позволяют параллельно выполнять несколько операций, не блокируя
+                    основной поток программы.
+                </p>
+                <p>Асинхронное программирование позволяет значительно повысить производительность, особенно в сетевых
+                    приложениях, таких как веб-серверы, где множество запросов обрабатываются одновременно без
+                    блокировки.</p>
+                <h2 class="section__title">Оптимизация производительности Python</h2>
+                <p>Существует несколько методов, с помощью которых можно улучшить производительность программ на Python.
+                    Например, для оптимизации работы с большими объемами данных можно использовать такие библиотеки, как
+                    <code>NumPy</code> и <code>Pandas</code>, которые реализуют вычисления на основе низкоуровневых
+                    C-библиотек и обеспечивают высокую скорость обработки данных.
+                </p>
+                <p>Кроме того, оптимизация времени выполнения кода может быть достигнута с помощью профилирования и
+                    оптимизации конкретных участков кода. Python предоставляет стандартный модуль <code>cProfile</code>
+                    для профилирования кода, который помогает выявить «узкие места» в программе и улучшить
+                    производительность.</p>
+                <p>Пример использования <code>cProfile</code> для анализа производительности функции:</p>
+                <pre><code>
+import cProfile
+
+def slow_function():
+    total = 0
+    for i in range(1000000):
+        total += i
+    return total
+
+cProfile.run('slow_function()')
+                </code></pre>
+                <p>Этот код позволяет понять, сколько времени занимает выполнение функции и какие части кода требуют
+                    оптимизации.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer__address">
+            <a href="mailto:kate_utkate@vk.com">kate_utkate@vk.com</a>
+            <p>© 2025 Все права защищены.</p>
+        </div>
+    </div>
+</body>
+
+</html>
