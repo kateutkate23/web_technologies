@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Таблица характеристик</title>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
@@ -10,39 +10,38 @@
 </head>
 
 <body>
-    <div class="header">
+    <header class="header">
         <div class="header__inner container">
             <div class="header__logo-title">
                 <img class="header__logo" src="../images/header_hat.jpg" alt="Шапка сайта">
                 <h1 class="header__title">Таблица характеристик языка Python</h1>
             </div>
-            <div class="header__menu">
+            <nav class="header__menu">
                 <ul class="header__menu-list">
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="../index.html"><cite>Главная</cite></a>
+                        <a class="header__menu-link" href="../index.html">Главная</a>
                     </li>
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="../pages/characteristics.html"><cite>Таблица
-                                характеристик</cite></a>
+                        <a class="header__menu-link" href="../pages/characteristics.html">Таблица характеристик</a>
                     </li>
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="../pages/sources.html"><cite>Источники</cite></a>
+                        <a class="header__menu-link" href="../pages/sources.html">Источники</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </div>
-    </div>
+    </header>
     <hr>
-    <div class="main">
-        <div class="section container">
-            <div class="section__body">
+    <main class="main">
+        <section class="section container">
+            <article class="section__body">
                 <h2 class="section__title">Язык Python в таблицах</h2>
                 <picture class="picture">
                     <img src="../images/python_opportunities.png" alt="Python careers">
                 </picture>
                 <div class="columns">
                     <div class="column">
-                        <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; text-align: center;">
+                        <table style="width: 100%; text-align: center; border-collapse: collapse;">
                             <caption>Характеристики языка Python</caption>
                             <thead>
                                 <tr>
@@ -82,7 +81,7 @@
                         </table>
                     </div>
                     <div class="column">
-                        <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; text-align: center;">
+                        <table style="width: 100%; text-align: center; border-collapse: collapse;">
                             <caption>Применение Python</caption>
                             <thead>
                                 <tr>
@@ -116,15 +115,16 @@
                         </table>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="section container">
-            <div class="section__body">
+            </article>
+        </section>
+        <section class="section container">
+            <article class="section__body">
                 <h2 class="section__title">Асинхронное программирование в Python</h2>
                 <p>Асинхронное программирование позволяет выполнять несколько задач одновременно, не блокируя основной
                     поток выполнения программы. Это особенно полезно для операций ввода-вывода, таких как сетевые
                     запросы или чтение/запись файлов, где время ожидания может быть значительным. В Python асинхронное
-                    программирование становится все более популярным благодаря библиотеке <code>asyncio</code>. Асинхронное
+                    программирование становится все более популярным благодаря библиотеке <code>asyncio</code>.
+                    Асинхронное
                     программирование позволяет улучшить производительность и отзывчивость приложений, особенно в
                     сценариях с большим количеством операций ввода-вывода. Это достигается за счет того, что программа
                     не простаивает в ожидании завершения одной задачи, а продолжает выполнять другие задачи.</p>
@@ -175,15 +175,15 @@ cProfile.run('slow_function()')
                 </code></pre>
                 <p>Этот код позволяет понять, сколько времени занимает выполнение функции и какие части кода требуют
                     оптимизации.</p>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="footer__address">
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <address class="footer__address">
             <a href="mailto:kate_utkate@vk.com">kate_utkate@vk.com</a>
             <p>© 2025 Все права защищены.</p>
-        </div>
-    </div>
+        </address>
+    </footer>
 </body>
 
 </html>
