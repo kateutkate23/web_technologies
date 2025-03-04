@@ -1,0 +1,285 @@
+@import "normalize.css";
+
+/* global */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+th,
+td {
+    border: 1px solid black;
+}
+
+.container {
+    max-width: calc(1240px + 20px * 2);
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+.section__text p {
+    margin-bottom: 12px;
+}
+
+/* header */
+
+.header__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 15px;
+    padding: 15px;
+}
+
+.header__logo-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__menu {
+    margin-top: 50px;
+}
+
+.header__logo {
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    filter: blur(2px);
+    transition: filter 0.3s ease; 
+}
+
+.header__logo:hover {
+    filter: none;
+}
+
+.header__menu-list {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.header__menu-item:hover {
+    color: blue;
+}
+
+.header__inner {
+    padding-top: 240px; 
+}
+
+/* main */
+
+.columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column {
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.section__video {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.documentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* table */
+
+table {
+    margin: 10mm;
+    font-family: Arial, sans-serif;
+    max-height: 300px; 
+    display: block; 
+    /* прокрутка */
+    overflow-y: auto; 
+}
+
+th, td {
+    border: 2px solid #4682b4; 
+    padding: 8px;
+}
+
+.columns {
+    display: flex;
+    gap: 20px;
+    width: 90%; 
+    margin: 0 auto;
+}
+
+.column {
+    flex: 1;
+}
+
+thead th {
+    background-color: rgb(70, 130, 180); 
+    color: white;
+    font-weight: bold;
+}
+
+caption {
+    padding: 10px;
+    font-size: 18px;
+    color: navy;
+    font-weight: bold;
+}
+
+tfoot td {
+    font-size: 12px;
+    color: #666; 
+    font-style: italic;
+}
+
+tbody tr:hover {
+    background-color: #f0f8ff; 
+    transition: background-color 0.3s;
+}
+
+.image-cell {
+    padding: 0;
+    vertical-align: middle;
+}
+
+.image-cell img {
+    max-width: 200px; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+td a:link {
+    color: #0000ff;
+}
+
+td a:visited {
+    color: #800080;
+}
+
+td a:hover {
+    color: #ff4500;
+    text-decoration: underline;
+}
+
+/* list */
+
+.features-list {
+    /* десятичные цифры для первого уровня */
+    list-style-type: decimal; 
+    padding-left: 20mm; 
+    font-size: 16px;
+}
+
+.features-list .sub-list {
+    /* римские цифры для второго уровня */
+    list-style-type: upper-roman; 
+    padding-left: 15mm;
+    color: #333; 
+}
+
+.section__title {
+    font-size: 24px;
+    color: navy;
+    margin-bottom: 10px;
+}
+
+.section__subtitle {
+    font-size: 18px;
+    color: #4682b4;
+    margin: 15px 0 10px;
+}
+
+.features-list li:hover {
+    color: rgb(255, 69, 0);
+    transition: color 0.3s;
+}
+
+/* footer */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4d79ff;
+    height: 50px;
+}
+
+.footer__address {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* расширенное задание */
+
+/* глобальное, локальное и связанное правило */
+section {
+    margin-bottom: 10px;
+}
+
+.section__title {
+    background-color: #e6f0ff; 
+}
+
+.section .section__title {
+    padding-top: 10px; 
+}
+
+.section__text p:first-letter {
+    font-size: 24px;
+    color: #4682b4;
+}
+
+table {
+    margin: 20px auto; 
+    border: 2px solid #4682b4; 
+    padding: 10px; 
+}
+
+.footer {
+    border-radius: 15px;
+}
+
+.header__inner {
+    background-image: linear-gradient(to bottom, #4d79ff, #ffffff);
+}
+
+.footer__address a {
+    text-decoration: underline;
+}
+
+.header__logo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.header__menu-item:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
+}
