@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета о Python</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../style/normalize.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container h3 {
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: inline-block;
+            width: 200px;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 5px;
+        }
+
+        .form-group input[type="checkbox"],
+        .form-group input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner container">
+            <div class="header__logo-title">
+                <img class="header__logo" src="../images/header_hat.jpg" alt="Шапка сайта">
+                <h1 class="header__title">Язык программирования Python</h1>
+            </div>
+            <nav class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="../pages/characteristics.html">Таблица характеристик</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="../pages/sources.html">Источники</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="anketa.html">Анкета</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <hr>
+    <main class="main">
+        <section class="section container">
+            <div class="form-container">
+                <h3>Анкета пользователя Python</h3>
+                <form method="GET" action="/cgi-bin/anketa.py" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label>Фамилия:</label>
+                        <input type="text" name="surname" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Имя:</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Отчество:</label>
+                        <input type="text" name="patronymic" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Уровень знаний Python:</label>
+                        <select name="level" required>
+                            <option value="beginner">Новичок</option>
+                            <option value="intermediate">Средний</option>
+                            <option value="advanced">Продвинутый</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Используемые библиотеки:</label>
+                        <input type="checkbox" name="libs" value="numpy">NumPy
+                        <input type="checkbox" name="libs" value="pandas">Pandas
+                        <input type="checkbox" name="libs" value="django">Django
+                    </div>
+                    <div class="form-group">
+                        <label>Предпочитаемая IDE:</label>
+                        <input type="radio" name="ide" value="pycharm" required>PyCharm
+                        <input type="radio" name="ide" value="vscode">VS Code
+                        <input type="radio" name="ide" value="jupyter">Jupyter
+                    </div>
+                    <div class="form-group">
+                        <label>Электронная почта:</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <input type="hidden" name="source" value="anketa">
+                    <input type="submit" value="Отправить" class="submit-btn">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <address class="footer__address">
+            <a href="mailto:kate_utkate@vk.com">kate_utkate@vk.com</a>
+            <p>© 2025 Все права защищены.</p>
+        </address>
+    </footer>
+    <script>
+        function validateForm() {
+            const surname = document.getElementsByName('surname')[0].value;
+            const name = document.getElementsByName('name')[0].value;
+            const patronymic = document.getElementsByName('patronymic')[0].value;
+            const email = document.getElementsByName('email')[0].value;
+            const letterOnly = /^[а-яА-ЯёЁa-zA-Z]+$/;
+
+            if (!surname || !name || !patronymic || !email) {
+                alert('Заполните все обязательные поля!');
+                return false;
+            }
+            if (!letterOnly.test(surname) || !letterOnly.test(name) || !letterOnly.test(patronymic)) {
+                alert('Фамилия, имя и отчество должны содержать только буквы!');
+                return false;
+            }
+            if (!email.includes('@')) {
+                alert('Электронная почта должна содержать символ @!');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
