@@ -66,7 +66,7 @@
                 <section class="section-3">
                     <h2 class="section__title">Основные особенности</h2>
                     <h3 class="section__subtitle">Ключевые характеристики Python</h3>
-                    <ol class="features-list">
+                    <ol name="dynamicList" class="features-list">
                         <li><strong>Интерпретируемый язык</strong>
                             <ol class="sub-list">
                                 <li>Код выполняется строка за строкой без необходимости компиляции, что упрощает процесс
@@ -192,6 +192,68 @@
                     </div>
                 </section>
             </article>
+        </section>
+
+        <section class="section container">
+            <div class="controls" style="margin: 20px;">
+                <button name="actionButton" value="showInfo">Показать информацию</button>
+                <button name="actionButton" value="addRow">Добавить пункт в список</button>
+                <button name="actionButton" value="changeColor">Изменить цвет</button>
+                <button name="actionButton" value="changeSize">Изменить размер</button>
+            </div>
+
+            <div name="clocks" style="margin: 20px; text-align: center;">
+                <p>Москва: <span name="clock" id="moscow"></span></p>
+                <p>Нью-Йорк: <span name="clock" id="newYork"></span></p>
+                <p>Токио: <span name="clock" id="tokyo"></span></p>
+                <button name="actionButton" value="startClocks">Запустить часы</button>
+            </div>
+
+            <script>
+                Array.from(document.getElementsByName('actionButton')).forEach(button => {
+                    button.addEventListener('click', function () {
+                        const value = this.value;
+
+                        // 1. Всплывающее окно с ФИО и группой
+                        if (value === 'showInfo') {
+                            alert('Уткина Екатерина Алексеевна, группа 4232');
+                        }
+
+                        // 2. Запуск часов для трех часовых поясов + функции toLocaleTimeString с параметрами
+                        if (value === 'startClocks') {
+                            setInterval(() => {
+                                const now = new Date();
+                                document.getElementsByName('clock')[0].textContent = now.toLocaleTimeString('ru-RU', { timeZone: 'Europe/Moscow' });
+                                document.getElementsByName('clock')[1].textContent = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+                                document.getElementsByName('clock')[2].textContent = now.toLocaleTimeString('ja-JP', { timeZone: 'Asia/Tokyo' });
+                            }, 1000);
+                        }
+
+                        // 3. Добавление пустого пункта в список (замена таблицы)
+                        if (value === 'addRow') {
+                            const list = document.getElementsByName('dynamicList')[0];
+                            const li = document.createElement('li');
+                            li.textContent = 'Новый пункт';
+                            list.appendChild(li);
+                        }
+
+                        // 4. Изменить цвет элемента (заголовок h1)
+                        if (value === 'changeColor') {
+                            document.getElementsByTagName('h1')[0].style.color = '#ff4500';
+                        }
+
+                        // 5. Изменить размер элемента (логотип)
+                        if (value === 'changeSize') {
+                            document.getElementsByClassName('header__logo')[0].style.width = '150px';
+                        }
+                    });
+                });
+
+                // Удаление элемента списка при двойном клике
+                document.getElementsByName('dynamicList')[0].addEventListener('dblclick', (e) => {
+                    if (e.target.tagName === 'LI') e.target.remove();
+                });
+            </script>
         </section>
     </main>
     <footer class="footer">

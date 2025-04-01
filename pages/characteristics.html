@@ -71,7 +71,8 @@
                                 <tr>
                                     <td>
                                         <a href="../index.html">На главную</a>
-                                        Объектно-ориентированная</td>
+                                        Объектно-ориентированная
+                                    </td>
                                     <td class="image-cell">
                                         <img src="https://www.python.org/static/img/python-logo.png" alt="Python Logo">
                                     </td>
@@ -85,7 +86,7 @@
                         </table>
                     </div>
                     <div class="column">
-                        <table style="width: 100%; text-align: center; border-collapse: collapse;">
+                        <table name="dynamicTable" style="width: 100%; text-align: center; border-collapse: collapse;">
                             <caption>Применение Python</caption>
                             <thead>
                                 <tr>
@@ -120,6 +121,56 @@
                     </div>
                 </div>
             </article>
+        </section>
+        <section class="section container">
+            <div class="controls" style="margin: 20px;">
+                <input type="text" name="userInput" placeholder="Введите данные для таблицы">
+                <button name="actionButton" value="addRowWithInput">Добавить строку с вводом</button>
+                <button name="actionButton" value="deleteRow">Удалить последнюю строку</button>
+                <button name="actionButton" value="changeText">Изменить текст</button>
+            </div>
+            <script>
+                // Обработчик событий окна (скроллинг)
+                window.addEventListener('scroll', () => {
+                    console.log('Прокрутка страницы: ' + window.scrollY);
+                });
+
+                // функция обновления текста с параметрами
+                const updateText = (element, newText, color) => {
+                    element.textContent = newText;
+                    element.style.color = color;
+                };
+
+                // Обработчики кнопок
+                Array.from(document.getElementsByName('actionButton')).forEach(button => {
+                    button.addEventListener('click', function () {
+                        const value = this.value;
+
+                        // 1. Добавление строки с пользовательским вводом
+                        if (value === 'addRowWithInput') {
+                            const input = document.getElementsByName('userInput')[0].value;
+                            const table = document.getElementsByName('dynamicTable')[0];
+                            const rowCount = table.rows.length - 2;
+                            const newRow = table.insertRow(rowCount);
+                            newRow.innerHTML = `<td>Новая</td><td>${input || 'Пусто'}</td><td>Добавлено</td>`;
+                        }
+
+                        // 2. Удаление последней добавленной строки
+                        if (value === 'deleteRow') {
+                            const table = document.getElementsByName('dynamicTable')[0];
+                            if (table.rows.length > 6) {
+                                table.deleteRow(table.rows.length - 2);
+                            }
+                        }
+
+                        // 3. Функция с параметрами
+                        if (value === 'changeText') {
+                            const caption = document.getElementsByTagName('caption')[1]; // Вторая caption на странице
+                            updateText(caption, 'Новое название', 'green');
+                        }
+                    });
+                });
+            </script>
         </section>
         <section class="section container">
             <article class="section__body">
