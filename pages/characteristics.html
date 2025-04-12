@@ -115,11 +115,6 @@
                                     <td>5</td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="3">Источник: исследование 2025</td>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -153,7 +148,7 @@
                         if (value === 'addRowWithInput') {
                             const input = document.getElementsByName('userInput')[0].value;
                             const table = document.getElementsByName('dynamicTable')[0];
-                            const rowCount = table.rows.length - 2;
+                            const rowCount = table.rows.length;
                             const newRow = table.insertRow(rowCount);
                             newRow.innerHTML = `<td>Новая</td><td>${input || 'Пусто'}</td><td>Добавлено</td>`;
                         }
@@ -161,8 +156,8 @@
                         // 2. Удаление последней добавленной строки
                         if (value === 'deleteRow') {
                             const table = document.getElementsByName('dynamicTable')[0];
-                            if (table.rows.length > 6) {
-                                table.deleteRow(table.rows.length - 2);
+                            if (table.rows.length > 3) {
+                                table.deleteRow(table.rows.length - 1);
                             }
                         }
 

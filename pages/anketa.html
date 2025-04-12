@@ -95,7 +95,7 @@
                     </div>
                     <div class="form-group">
                         <label>Отчество:</label>
-                        <input type="text" name="patronymic" required>
+                        <input type="text" name="patronymic">
                     </div>
                     <div class="form-group">
                         <label>Уровень знаний Python:</label>
@@ -141,18 +141,26 @@
             const email = document.getElementsByName('email')[0].value;
             const letterOnly = /^[а-яА-ЯёЁa-zA-Z]+$/;
 
-            if (!surname || !name || !patronymic || !email) {
-                alert('Заполните все обязательные поля!');
+            if (!surname || !name || !email) {
+                alert('Заполните все обязательные поля: фамилия, имя и email!');
                 return false;
             }
-            if (!letterOnly.test(surname) || !letterOnly.test(name) || !letterOnly.test(patronymic)) {
-                alert('Фамилия, имя и отчество должны содержать только буквы!');
+
+            if (!letterOnly.test(surname) || !letterOnly.test(name)) {
+                alert('Фамилия и имя должны содержать только буквы!');
                 return false;
             }
+
+            if (patronymic && !letterOnly.test(patronymic)) {
+                alert('Отчество должно содержать только буквы!');
+                return false;
+            }
+
             if (!email.includes('@')) {
                 alert('Электронная почта должна содержать символ @!');
                 return false;
             }
+
             return true;
         }
     </script>

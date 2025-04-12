@@ -1,1 +1,5 @@
 Уткина | Екатерина | Алексеевна | advanced | django | pycharm | kate_utkate@vk.com | anketa
+Уткина | Катя | Алексеевна | advanced | numpy, django | pycharm | huskylucky@icloud.com | anketa
+Уткина | Екатерина | Алексеевна | advanced | numpy, django | pycharm | huskylucky2k17@gmail.com | anketa
+sahfgdjk | hfg | (не указано) | intermediate | numpy | pycharm | huskylucky2k17@gmail.com | anketa
+ыфорпв | ролыфролф | (не указано) | advanced | pandas | pycharm | huskylucky@icloud.com | anketa
